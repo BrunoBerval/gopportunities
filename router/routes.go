@@ -6,8 +6,9 @@ import (
 )
 
 func InitializeRoutes(router *gin.Engine) {
-	// Define uma rota
+	// Define uma grupo de rotas
 	v1 := router.Group("/api/v1")
+	// Rotas do grupo
 	{
 		v1.GET("/opening", handler.ShowOpeningHandler)
 
