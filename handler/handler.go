@@ -1,15 +1,16 @@
 package handler
 
 import (
+	"github.com/BrunoBerval/gopportunities/config"
 	"gorm.io/gorm"
 )
 
-type Opening struct {
-	gorm.Model
-	Role     string
-	Company  string
-	Location string
-	Remote   bool
-	Link     string
-	Salary   int64
+var (
+	logger *config.Logger
+	db     *gorm.DB
+)
+
+func InitializeHandler() {
+	logger = config.GetLogger()
+	db = config.GetSQLite()
 }
